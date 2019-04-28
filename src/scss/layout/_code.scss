@@ -1,0 +1,179 @@
+.code-snippet {
+  width: 100%;
+  min-height: 414px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+
+  .code-block {
+    max-width: 600px;
+    height: 450px;
+    background: #283746;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(40,55,70,0.2);
+    -moz-box-shadow: 0 1px 2px 0 rgba(40,55,70,0.2);
+    -khtml-box-shadow: 0 1px 2px 0 rgba(40,55,70,0.2);
+    -ms-box-shadow: 0 1px 2px 0 rgba(40,55,70,0.2);
+    box-shadow: 0 1px 2px 0 rgba(40,55,70,0.2);
+    border-radius: 2px 0 0 2px;
+    position: relative;
+
+    .lang-switcher {
+      display: block;
+      list-style-type: disc;
+      width: 600px;
+      height: 40px;
+      background: #365474;
+      border-radius: 2px 0 0 0;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        font-family: "Open Sans",arial,sans-serif;
+        padding: 4px 12px 9px 15px;
+        height: 40px;
+
+        &:first-child {
+          margin-left: 25px;
+        }
+      }
+
+      a {
+        background: transparent;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 300;
+        color: #fff;
+        letter-spacing: 0;
+        line-height: 20px;
+        opacity: .75;
+        position: relative;
+      }
+
+      .active {
+        color: #fff;
+        opacity: 1;
+
+        &:before {
+          content: '';
+          background-color: #f2327e;
+          height: 2px;
+          position: absolute;
+          display: block;
+          width: calc(100%);
+          bottom: -50%;
+          transition: width .2s ease;
+        }
+      }
+    }
+  }
+
+  .code-block-code {
+    height: 330px;
+    overflow: auto;
+    padding: 20px;
+
+    textarea {
+      position: relative;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      height: 40px;
+      padding: 0 16px;
+      font: 400 14px/40px "Open Sans",arial,sans-serif;
+      color: #444;
+      border: solid 1px #c4cace;
+      background-color: #fff;
+      -webkit-appearance: none;
+      -webkit-transition: border .2s ease,box-shadow .2s ease,color .2s ease;
+      -moz-transition: border .2s ease,box-shadow .2s ease,color .2s ease;
+      -o-transition: border .2s ease,box-shadow .2s ease,color .2s ease;
+      transition: border .2s ease,box-shadow .2s ease,color .2s ease;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+
+      height: 150px;
+      line-height: 20px;
+      padding: 8px 14px;
+      display: none;
+    }
+
+    pre {
+      display: block;
+      font-family: monospace;
+      white-space: pre;
+      margin: 0;
+      padding: 0;
+      background: #283746;
+    }
+
+    code {
+      text-align: left;
+    }
+
+    .hljs {
+      display: block;
+      overflow-x: visible;
+      padding: 0;
+      background: #283746;
+      -webkit-text-size-adjust: none;
+      color: #f8f8f2;
+    }
+
+    .hljs-string {
+      color: #ffebb5;
+    }
+
+    .hljs-keyword {
+      color: #f2327e;
+    }
+
+    .hljs-method {
+      color: #41b7d7;
+    }
+  }
+
+  .code-preview {
+    width: 600px;
+    height: 450px;
+    padding: 40px;
+    overflow: auto;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(40,55,70,0.2);
+    -moz-box-shadow: 0 1px 2px 0 rgba(40,55,70,0.2);
+    -khtml-box-shadow: 0 1px 2px 0 rgba(40,55,70,0.2);
+    -ms-box-shadow: 0 1px 2px 0 rgba(40,55,70,0.2);
+    box-shadow: 0 1px 2px 0 rgba(40,55,70,0.2);
+    border-radius: 0 2px 2px 0;
+    text-align: left;
+    background-color: #f9f9f9;
+
+    pre {
+      margin: 0;
+      padding: 0;
+      display: block;
+      font-family: monospace;
+      white-space: pre;
+      background: transparent;
+    }
+
+    code {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      background: rgba(40,55,70,0.05);
+      background-color: inherit;
+      text-align: left;
+      display: inline;
+    }
+  }
+}

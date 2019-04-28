@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="jp" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meta Bee API</title>
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap boxed-container">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="#">
+								<img class="header-logo-image asset-light" src="dist/images/logo-light.svg" alt="Logo">
+								<img class="header-logo-image asset-dark" src="dist/images/logo-dark.svg" alt="Logo">
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-inner">
+						<div class="hero-copy">
+	                        <h1 class="hero-title mt-0">Meta Bee API</h1>
+                            <p class="hero-paragraph">
+                                指定したURLのメタ情報（サイト名、OGP画像、SNSアカウント、ドメイン取得日など）を取得するAPIです。
+                            </p>
+	                        <div class="hero-cta">
+								<a class="button button-primary" href="#" id="try-it">Try it now</a>
+								<div class="lights-toggle">
+									<input id="lights-toggle" type="checkbox" name="lights-toggle" class="switch" checked="checked">
+									<label for="lights-toggle" class="text-xs"><span>Turn me <span class="label-text">dark</span></span></label>
+								</div>
+							</div>
+						</div>
+						<div class="hero-media">
+							<div class="header-illustration">
+								<img class="header-illustration-image asset-light" src="dist/images/header-illustration-light.svg" alt="Header illustration">
+								<img class="header-illustration-image asset-dark" src="dist/images/header-illustration-dark.svg" alt="Header illustration">
+							</div>
+							<div class="hero-media-illustration">
+								<img class="hero-media-illustration-image asset-light" src="dist/images/hero-media-illustration-light.svg" alt="Hero media illustration">
+								<img class="hero-media-illustration-image asset-dark" src="dist/images/hero-media-illustration-dark.svg" alt="Hero media illustration">
+							</div>
+							<div class="hero-media-container">
+								<!-- <img class="hero-media-image asset-light" src="dist/images/hero-media-light.svg" alt="Hero media">-->
+                                <img class="hero-media-image asset-light" src="dist/images/code/code_1.png" alt="Header illustration" width="650">
+								<!-- <img class="hero-media-image asset-dark" src="dist/images/hero-media-dark.svg" alt="Hero media"> -->
+                                <img class="hero-media-image asset-dark" src="dist/images/code/code_1.png" alt="Header illustration" width="650">
+							</div>
+						</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features section">
+                <div class="container">
+					<div class="features-inner section-inner has-bottom-divider">
+						<div class="features-header text-center">
+							<div class="container-sm">
+								<h2 class="section-title mt-0">Meta Bee APIとは</h2>
+	                            <p class="section-paragraph">
+                                    指定したURLにアクセスし、メタ情報やOGP画像、タイトル、ドメインの取得日、サイト内の文字列を解析し、運営元やTwitter・YouTube・GitHubアカウントなどを抽出します。</p>
+								<div class="features-image">
+									<img class="features-illustration asset-dark" src="dist/images/features-illustration-dark.svg" alt="Feature illustration">
+									<!-- <img class="features-box asset-dark" src="dist/images/features-box-dark.svg" alt="Feature box"> -->
+                                    <img class="features-box asset-dark" src="dist/images/code/code_2.png" alt="Feature box" width="600">
+
+									<img class="features-illustration asset-dark" src="dist/images/features-illustration-top-dark.svg" alt="Feature illustration top">
+									<img class="features-illustration asset-light" src="dist/images/features-illustration-light.svg" alt="Feature illustration">
+									<!-- <img class="features-box asset-light" src="dist/images/features-box-light.svg" alt="Feature box"> -->
+
+                                    <img class="features-box asset-light" src="dist/images/code/code_2.png" alt="Feature box" width="600">
+
+									<img class="features-illustration asset-light" src="dist/images/features-illustration-top-light.svg" alt="Feature illustration top">
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+
+
+                        <div class="features-header text-center">
+                            <div class="container-sm">
+                                <h2 class="section-title" id="how-to">使い方</h2>
+                                <p class="section-paragraph">
+                                APIエンドポイントに調べたいURLをURLパラメータとして与えることで、JSONで結果を得られる。</p>
+                            </div>
+                        </div>
+
+                        <div>
+
+
+                            <div class="code-snippet">
+                                <div class="code-block">
+                                    <ul class="lang-switcher">
+                                        <li>
+                                            <a id="curl-switch" class="active" data-code-language="curl">cURL</a>
+                                        </li>
+
+                                        <li>
+                                            <a id="ruby-switch" data-code-language="ruby">Ruby</a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="code-block-code" id="curl-block" data-code-language="curl">
+                                        <textarea>
+curl https://api.appp.la?url=https://www.appp.la \
+  -H "Accept: application/json"
+                                        </textarea>
+
+                                        <pre>
+                                            <code class="bash hljs">
+curl -X GET https://api.appp.la?url=https://www.appp.la \
+  -H <span class="hljs-string">"Accept: application/json"</span>
+                                            </code>
+                                        </pre>
+                                    </div>
+
+                                    <div class="code-block-code" id="ruby-block" data-code-language="ruby" style="display: none;">
+                                        <textarea>
+require 'faraday'
+
+api_url = 'https://api.appp.la'
+url = 'https://www.appp.la'
+res = Faraday.get api_url, { url: url }
+puts res.body
+                                        </textarea>
+
+                                        <pre>
+                                            <code class="python hljs">
+<span class="hljs-keyword">require</span> <span class="hljs-string">'faraday'</span>
+api_url <span class="hljs-keyword">=</span> <span class="hljs-string">'https://api.appp.la'</span>
+url <span class="hljs-keyword">=</span> <span class="hljs-string">'https://www.appp.la'</span>
+res <span class="hljs-keyword">=</span> <span class="hljs-method">Faraday</span>.get api_url, { <span class="hljs-method">url</span>: url }
+<span class="hljs-method">puts</span> res.body
+
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </div>
+
+                                <div class="code-preview">
+                                    <pre>
+                                        <code class="plaintext">
+{
+  "link": "https://www.appp.la/",
+  "name": "話題のWebサービス・アプリが見つかる Apppla[アプラ]",
+  "short_description": "話題のWebサービス・アプリが見つかる Apppla[アプラ]",
+  "description": "Appplaは、話題になったWebサービス、アプリが見つかるメディアです。キュレーターが選んだWebサービス・アプリ情報を毎日、メールで受け取ることができます。",
+  "image": "https://s3-ap-northeast-1.amazonaws.com/apppla-assets/static/ogp.png",
+  "keywords": Array[8][
+    "webサービス",
+    " iosアプリ",
+    " androidアプリ",
+    " 人気",
+    " 話題",
+    " 検索サービス",
+    " アプリ",
+    " キューレーション、メディア、まとめ"
+  ],
+  "published_at": "2017-12-31",
+  "slug": "appp_la",
+  "app": {
+    "ios_link": "",
+    "android_link": ""
+  },
+  "source": {
+    "link": "",
+    "name": ""
+  },
+  "sns": {
+    "facebook": "",
+    "twitter": "@appp_la",
+    "email": "",
+    "youtube": "",
+    "instagram": "appp_la/?hl=ja",
+    "linkedin": "",
+    "github": "",
+    "medium": "@apppla.info"
+  }
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="features-wrap">
+<!--                             <div class="feature is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img class="asset-light" src="dist/images/feature-01-light.svg" alt="Feature 01">
+										<img class="asset-dark" src="dist/images/feature-01-dark.svg" alt="Feature 01">
+                                    </div>
+									<div class="feature-content">
+                                    	<h3 class="feature-title mt-0">Discover</h3>
+                                    	<p class="text-sm mb-0">Lorem ipsum dolor sit amet, consecte adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dui.</p>
+									</div>
+								</div>
+                            </div> -->
+							<div class="feature is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img class="asset-light" src="dist/images/feature-02-light.svg" alt="Feature 02">
+										<img class="asset-dark" src="dist/images/feature-02-dark.svg" alt="Feature 02">
+                                    </div>
+									<div class="feature-content">
+                                    	<h3 class="feature-title mt-0">データは保存しない</h3>
+                                    	<p class="text-sm mb-0">ユーザーから与えられたURLパラメータや結果は保存していない。与えられたパラメータに対してその都度、結果を返している。</p>
+									</div>
+								</div>
+                            </div>
+							<div class="feature is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img class="asset-light" src="dist/images/feature-03-light.svg" alt="Feature 03">
+										<img class="asset-dark" src="dist/images/feature-03-dark.svg" alt="Feature 03">
+                                    </div>
+									<div class="feature-content">
+                                    	<h3 class="feature-title mt-0">無料</h3>
+                                    	<p class="text-sm mb-0">APIは無料で利用できる。</p>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+			<section class="cta section">
+                <div class="container-sm">
+                    <div class="cta-inner section-inner">
+                        <div class="cta-header text-center">
+                            <h2 class="section-title mt-0">お問い合わせ</h2>
+                            <p class="section-paragraph">対応してほしいメタ情報、機能の追加などありましたらお気軽にお問い合わせください。</p>
+							<div class="cta-cta">
+								<a class="button button-primary" href="https://www.appp.la/contact">Contact</a>
+							</div>
+					    </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer has-top-divider">
+            <div class="container">
+                <div class="site-footer-inner">
+                    <div class="brand footer-brand">
+                        <a href="#">
+							<img class="asset-light" src="dist/images/logo-light.svg" alt="Logo">
+							<img class="asset-dark" src="dist/images/logo-dark.svg" alt="Logo">
+                        </a>
+                    </div>
+                    <ul class="footer-links list-reset">
+                        <li>
+                            <a href="https://www.appp.la/contact">Contact</a>
+                        </li>
+                        <li>
+                            <a href="https://www.appp.la/about">About us</a>
+                        </li>
+                        <li>
+                            <a href="https://www.appp.la/helps">FAQ's</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-social-links list-reset">
+                        <li>
+                            <a href="https://twitter.com/appp_la" target="_blank">
+                                <span class="screen-reader-text">Twitter</span>
+                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z" fill="#FFF"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="footer-copyright">&copy; 2019 Apppla, all rights reserved</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="dist/js/main.min.js"></script>
+</body>
+</html>
