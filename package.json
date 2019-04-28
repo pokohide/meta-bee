@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Official Website for Meta Bee API.",
   "author": "pokohide <hyde14142@gmail.com>",
-  "license": "GPLv3",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/pokohide/meta-bee.git"
@@ -27,8 +27,7 @@
     "watch:css": "onchange \"src/scss\" -- run-s build:css",
     "watch:js": "onchange \"src/js\" -- run-s build:js",
     "watch:images": "onchange \"src/images\" -- run-s build:images",
-    "watch": "run-p serve watch:*",
-    "postinstall": "run-s build watch"
+    "watch": "run-p serve watch:*"
   },
   "devDependencies": {
     "autoprefixer": "^9.0.1",
